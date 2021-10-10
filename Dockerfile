@@ -1,14 +1,7 @@
 FROM tensorflow/tensorflow:latest-jupyter
 
-RUN apt-get update ##[edited]
-RUN apt-get install ffmpeg libsm6 libxext6  -y
-RUN apt-get install -y graphviz
+RUN apt-get update &&  apt-get install -y  ffmpeg libsm6 libxext6  graphviz
 RUN pip install --upgrade pip
-RUN pip install jupyter_contrib_nbextensions
-RUN jupyter contrib nbextension install --system
-RUN pip install pandas 
-RUN pip install matplotlib
-RUN pip install scikit-learn
-RUN pip install opencv-python
-RUN pip install pydot 
+RUN pip install jupyter_contrib_nbextensions && jupyter contrib nbextension install --system
+RUN pip install  pandas  matplotlib scikit-learn opencv-python pydot  nibabel h5py imageio
 COPY . /tf/mynotebooks
