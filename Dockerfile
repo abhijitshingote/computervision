@@ -1,4 +1,4 @@
-FROM tensorflow/tensorflow:latest-jupyter
+FROM tensorflow/tensorflow:latest-gpu-jupyter
 
 RUN apt-get update &&  apt-get install -y  ffmpeg libsm6 libxext6  graphviz protobuf-compiler
 RUN pip install --upgrade pip
